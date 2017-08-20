@@ -5,5 +5,24 @@
   "paginate": {
     "default": 10,
     "max": 50
-  }
+  },
+  "authentication": {
+    "secret": "629e8badf6e3b5fc5b8e1007a413f8ec7e51ee1876eabdee7fccab7e0e97604a5cba7df90253bca675b13e5dc4103bb0ae77e2981852fd693df3edf29ec7373f55d2d462456ff9150c1608fb1a337ecd01c2e92d2d276ba3b8dac047cdba80871e43f5ebd5bffc14bb5d743952ff0e610e77f9d2d999c896f4f094be453417bf9e67a026389d70f11a5048d5683fcbd4c209e6025792fb4381ac866dc5d1168b3b582572340ead806c98aabee8d6d4bad7f8c5e3feb6def7d3e1e6fc97a33dbf95167446b20428497f8c4ba53361505c25311a7b612c4dc0ec5487e3bc069b38418d584cec71903d2d840a63350f4de6b4c40983f3f5f112aeed532bc702662f",
+    "strategies": [
+      "jwt"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/fea_social_auth"
 }
